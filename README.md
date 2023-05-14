@@ -3,7 +3,7 @@
 -------------------------------------------------------------------------------------------------------
 
 
-This assignment trains a simple diabetes prediction model using sklearn library's RandomForestRegressor. This goal of this assignment is to experiment with training multiple models using Kubeflow where each model has a unique set of hyperparameters and comparing their performance using MLflow UI.
+This application trains a simple diabetes prediction model using sklearn library's RandomForestRegressor. This goal here is to experiment with training multiple models using Kubeflow where each model has a unique set of hyperparameters and comparing their performance using MLflow UI.
 
 
 -------------------------------------------------------------------------------------------------------
@@ -100,3 +100,12 @@ To clean up the entire application simply run,
 ```
 kind delete cluster
 ```
+
+-------------------------------------------------------------------------------------------------------
+
+***Future scope***
+
+Below mentioned are a few points to improve in the application
+1. Serving a model as a service to draw inference - Every model that is deemed to be used further should be available to the user
+2. Saving models - This is needed since the ultimate goal of the application is to provide the most accurate model to the user
+3. Better Kubernetes cluster reliability - This is very important since local clusters may break the application. One can think of running the application on a managed-Kubernetes cluster
