@@ -109,3 +109,16 @@ Below mentioned are a few points to improve in the application
 1. Serving a model as a service to draw inference - Every model that is deemed to be used further should be available to the user
 2. Saving models - This is needed since the ultimate goal of the application is to provide the most accurate model to the user
 3. Better Kubernetes cluster reliability - This is very important since local clusters may break the application. One can think of running the application on a managed-Kubernetes cluster
+
+-------------------------------------------------------------------------------------------------------
+
+***Demo video***
+
+https://vimeo.com/826600073?share=copy
+
+Please note that the video is long and incomplete because my machine was lagging a lot at the time.
+The video is nothing but a visual representation of the steps mentioned in this README and one can verify the same results by executing above steps.
+
+-------------------------------------------------------------------------------------------------------
+
+Thank you for spending your valuable time on this repository! :)
