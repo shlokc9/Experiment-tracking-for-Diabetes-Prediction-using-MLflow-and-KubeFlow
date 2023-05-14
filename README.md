@@ -11,9 +11,10 @@ This assignment trains a simple diabetes prediction model using sklearn library'
 ***Prerequisites***
 
 1. python >=3.8
-2. docker
-3. kubectl
-4. helm
+2. jupyter
+3. docker
+4. kubectl
+5. helm
 
 -------------------------------------------------------------------------------------------------------
 
