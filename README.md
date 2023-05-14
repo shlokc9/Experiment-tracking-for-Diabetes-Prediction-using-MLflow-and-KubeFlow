@@ -41,17 +41,20 @@ kubectl apply -k "github.com/kubeflow/pipelines/manifests/kustomize/cluster-scop
 kubectl wait --for condition=established --timeout=60s crd/applications.app.k8s.io
 kubectl apply -k "github.com/kubeflow/pipelines/manifests/kustomize/env/platform-agnostic-pns?ref=$PIPELINE_VERSION"
 ```
-Wait for all the pods in kubeflow namespace to turn to "Running" state
+Wait for all the pods in kubeflow namespace to turn to "Running" state (Use `kubectl -n kubeflow get pods -w` to monitor pod status)
 
-Verify that the Kubeflow Pipelines UI is accessible by port-forwarding. You can use this UI to manually interact with Kubeflow
+On a seperate terminal session, verify that the Kubeflow Pipelines UI is accessible by port-forwarding. You can use this UI to manually interact with Kubeflow
 ```
 kubectl port-forward -n kubeflow svc/ml-pipeline-ui 8080:80
 ```
 
 Now we install MLflow using the following helm commmand
 ```
+helm repo add community-charts https://community-charts.github.io/helm-charts
+helm repo update
 helm install --create-namespace mlflow --namespace mlflow community-charts/mlflow --version 0.7.19 --set service.type="NodePort"
 ```
+Wait for all the pods in mlflow namespace to turn to "Running" state (Use `kubectl -n mlflow get pods -w` to monitor pod status)
 
 To view the MLflow UI, we need to fetch the MLflow tracking server URI. Run following set of commands to get the URI
 ```
@@ -59,7 +62,7 @@ export NODE_PORT=$(kubectl get --namespace mlflow -o jsonpath="{.spec.ports[0].n
 export NODE_IP=$(kubectl get nodes --namespace mlflow -o jsonpath="{.items[0].status.addresses[0].address}")
 echo http://$NODE_IP:$NODE_PORT
 ```
-Note this URI for later use. For understanding purposes let's call it `MLFLOW_TRACKING_URI`
+Note this URI. Open it on a browser tab for later use. For understanding purposes let's call it `MLFLOW_TRACKING_URI`
 
 -------------------------------------------------------------------------------------------------------
 
