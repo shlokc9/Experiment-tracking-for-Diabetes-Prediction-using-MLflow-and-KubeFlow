@@ -80,7 +80,7 @@ Resultant command should look similar to `make run-pipeline n_estimators 30 crit
 
 Since we've already port forwarded the Kubeflow UI, you can check status of various experiment runs on http://localhost:8080/
 
-After each experiment run, you can head to MLFLOW_TRACKING_URI to check the performance of the model and compare each run. 
+After each experiment run, you can head to `MLFLOW_TRACKING_URI` to check the performance of the model and compare each run. 
 
 To delete pipeline
 ```
