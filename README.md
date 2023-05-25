@@ -3,7 +3,7 @@
 -------------------------------------------------------------------------------------------------------
 
 
-This application trains a simple diabetes prediction model using sklearn library's RandomForestRegressor. This goal here is to experiment with training multiple models using Kubeflow where each model has a unique set of hyperparameters and comparing their performance using MLflow UI.
+This application trains a simple diabetes prediction model using sklearn library's RandomForestRegressor. The goal here is to experiment with training multiple models using Kubeflow where each model has a unique set of hyperparameters and comparing their performance using MLflow UI.
 
 
 -------------------------------------------------------------------------------------------------------
