@@ -63,7 +63,11 @@ export NODE_PORT=$(kubectl get --namespace mlflow -o jsonpath="{.spec.ports[0].n
 export NODE_IP=$(kubectl get nodes --namespace mlflow -o jsonpath="{.items[0].status.addresses[0].address}")
 echo http://$NODE_IP:$NODE_PORT
 ```
-Note this URI. Open it on a browser tab for later use. For understanding purposes let's call it `MLFLOW_TRACKING_URI`
+If you are using a Ubuntu 20.04 from WSL2 docker desktop on Windows machine, you might have to port forward the mlfow dashboard. See for more info.: **https://stackoverflow.com/questions/69095319/cannot-connect-to-service-on-nodeport-using-kubernetes-on-windows-docker-desktop**
+```
+kubectl port-forward -n mlflow svc/mlflow 5000:5000
+```
+Note either of the URI that's applicable in your case. Open it on a browser tab for later use. For understanding purposes let's call it `MLFLOW_TRACKING_URI`
 
 -------------------------------------------------------------------------------------------------------
 
