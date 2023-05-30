@@ -7,11 +7,9 @@ if __name__ == '__main__':
 	pipelines = kfp.Client().list_pipelines().pipelines
 
 	for pipeline in pipelines:
-	    if pipeline.name == pipeline_name:
-	        pipeline_id = pipeline.id
-	        break
-	else:
-	    raise Exception(f"No pipeline found with name: {pipeline_name}")
+		if pipeline.name == pipeline_name:
+			pipeline_id = pipeline.id
+			break
 
 	experiment_name = 'Diabetes Prediction Experiment'
 	experiment = kfp.Client().create_experiment(experiment_name)
