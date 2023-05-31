@@ -13,3 +13,6 @@ jupyter_server_ydoc==0.8.0
 jupyterlab==3.6.3
 jupyterlab-pygments==0.2.2
 jupyterlab_server==2.22.1
+kfp==1.8.22
+kfp-pipeline-spec==0.1.16
+kfp-server-api==1.8.5
