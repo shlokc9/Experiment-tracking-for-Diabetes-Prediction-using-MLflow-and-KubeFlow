@@ -10,7 +10,7 @@ This application trains a simple diabetes prediction model using sklearn library
 
 ***Prerequisites***
 
-1. python >=3.8
+1. python >=3.8 along with pip
 2. jupyter
 3. docker
 4. kubectl
@@ -68,6 +68,12 @@ If you are using a Ubuntu 20.04 from WSL2 docker desktop on Windows machine, you
 kubectl port-forward -n mlflow svc/mlflow 5000:5000
 ```
 Note either of the URI that's applicable in your case. Open it on a browser tab for later use. For understanding purposes let's call it `MLFLOW_TRACKING_URI`
+
+Install the python dependencies required to run the kubeflow scripts
+```
+cd Experiment-tracking-for-Diabetes-Prediction-using-MLflow-and-KubeFlow/
+pip install -r requirements.txt
+```
 
 -------------------------------------------------------------------------------------------------------
 
